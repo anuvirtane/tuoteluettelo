@@ -10,7 +10,7 @@ import { ProductService } from './product.service';
 export class AppComponent implements OnInit {
   title = 'tuoteluettelo';
 
-  products: any[];
+  productsList: any[];
   testProduct: string = "TestProduct3874";
 
   constructor(public productService: ProductService) { }
@@ -21,7 +21,7 @@ export class AppComponent implements OnInit {
 
   getProducts(): void {
     this.productService.getAllProducts()
-        .subscribe(data => { this.products = data;
+        .subscribe(data => { this.productsList = data;
           console.log(data);},
           error => {console.log("http-error:");
           console.log(error);});
