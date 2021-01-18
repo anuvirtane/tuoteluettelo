@@ -9,6 +9,9 @@ import { ProductService } from '../product.service';
 export class PhonesListComponent implements OnInit {
 
   title = 'tuoteluettelo';
+  filter= '';
+
+  sortBy = "name";
 
   productsList: any[];
   testProduct: string = "TestProduct3874";

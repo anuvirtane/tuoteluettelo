@@ -1,1 +1,23 @@
-<article *ngFor='let phone of productsList'> {{phone.name}} </article>
+<section class="filter">
+  <div class="search">
+    <label class="label">Search:</label>
+    <input class="input" [(ngModel)]="filter" type="text" />
+  </div>
+
+  <div class="sort">
+    <label class="label">Sort by:</label>
+    <select class="select" [(ngModel)]="sortBy">
+      <option value="age">Newest</option>
+      <option value="name">Alphabetical</option>
+
+    </select>
+
+
+<article *ngFor='let phone of productsList'>
+  <img src= '{{"../../assets/"+ phone.imageUrl}}'
+  alt = '{{phone.name}}' height = "150" width = "140">
+
+
+  <p><a href="">{{phone.name}}</a></p>
+  <p>{{phone.snippet}}</p>
+ </article>
