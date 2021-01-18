@@ -5,10 +5,12 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { PhonesListComponent } from './phones-list/phones-list.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PhonesListComponent
   ],
   imports: [
     BrowserModule,
