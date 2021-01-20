@@ -1,23 +1,33 @@
-<section class="filter">
-  <div class="search">
+<article class ="flex-parent">
+<aside class="search--sort">
+
+  <section class="search">
     <label class="label">Search:</label>
     <input class="input" [(ngModel)]="filter" type="text" />
-  </div>
+  </section>
 
-  <div class="sort">
+
+  <section class="sort">
     <label class="label">Sort by:</label>
     <select class="select" [(ngModel)]="sortBy">
       <option value="age">Newest</option>
       <option value="name">Alphabetical</option>
 
     </select>
+  </section>
+</aside>
 
+<section class="phones-list-section">
 
-<article *ngFor='let phone of productsList'>
+<ul class="phones-list" *ngFor='let phone of productsList'>
+  <li class="li-phone">
   <img src= '{{"../../assets/"+ phone.imageUrl}}'
   alt = '{{phone.name}}' height = "150" width = "140">
 
 
   <p><a href="">{{phone.name}}</a></p>
   <p>{{phone.snippet}}</p>
- </article>
+</li>
+ </ul>
+</section>
+</article>

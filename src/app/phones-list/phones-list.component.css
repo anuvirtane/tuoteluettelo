@@ -1,0 +1,46 @@
+.flex-parent {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.flex-parent > * {
+  flex-basis: 0px;
+
+  order: 2;
+}
+
+.search--sort {
+  flex-grow: 1;
+}
+
+.phones-list-section {
+  flex-grow: 3;
+
+}
+
+.phones-list {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+
+.li-phone {
+  flex-basis: 0px;
+  flex-grow: 1;
+  order: 2;
+  list-style: none;
+  border-style: ridge;
+  padding: 1rem;
+}
+
+@media only screen and (max-width: 425 px) {
+  .flex-parent {
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+
+  .flex-parent > * {
+    flex-grow: 1;
+  }
+}
