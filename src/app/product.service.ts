@@ -13,24 +13,16 @@ export class ProductService {
 
   getAllProducts(): any {
 
-/*
-    this.http.get('assets/phones/phones.json').subscribe(
-      data => {
-        this.products.push(data);
-        console.log(data);
-      },
-      (error: HttpErrorResponse) => {
-        console.log(error.message);
-      }
-    ) */
-
-
     const products = this.http.get('assets/phones/phones.json');
-
-    console.log("product service says: " + products);
 
     return products;
   }
+
+
+
+
+
+
 
 
 }

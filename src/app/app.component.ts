@@ -22,7 +22,7 @@ export class AppComponent implements OnInit {
   getProducts(): void {
     this.productService.getAllProducts()
         .subscribe(data => { this.productsList = data;
-          console.log(data);},
+          },
           error => {console.log("http-error:");
           console.log(error);});
   }
