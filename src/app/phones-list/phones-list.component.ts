@@ -9,7 +9,8 @@ import { ProductService } from '../product.service';
 export class PhonesListComponent implements OnInit {
 
   title = 'Phones';
-  filter= '';
+filter: string = '';
+soughtPhone: string = '';
 
 
 
@@ -48,6 +49,32 @@ export class PhonesListComponent implements OnInit {
     }
   }
 
+  onSearch(event: any) {
+
+    this.filter = (<HTMLInputElement>event.target).value;
+    this.productsList.forEach(element => {
+      if(element.name===(this.filter)) {
 
 
-}
+        this.soughtPhone = element.name;
+
+
+
+      }
+
+    });
+
+
+      }
+
+ }
+
+
+
+
+
+
+
+
+
+

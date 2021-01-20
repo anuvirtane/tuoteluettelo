@@ -3,7 +3,13 @@
 
   <section class="search">
     <label class="label">Search:</label>
-    <input class="input" [(ngModel)]="filter" type="text" />
+    <input class="input" (input)="onSearch($event)" type="text" />
+
+<div class="m-3"
+*ngIf="soughtPhone==filter; else elseBlock">
+ <p class="card bg-light m-1 p-3"> {{soughtPhone}}</p>
+</div>
+<ng-template #elseBlock>No search results</ng-template>
   </section>
 
 
