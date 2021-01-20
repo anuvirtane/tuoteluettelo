@@ -1,4 +1,9 @@
-<p>{{phoneId}}</p>
-<p>{{chosenPhone.name}}</p>
-{{chosenPhone.snippet}}
+
+<p>{{chosenPhone.additionalFeatures}}</p>
+{{chosenPhone.battery}}
+<img src='{{"../../assets/"+chosenPhone.images[0]}}'>
+<img src='{{"../../assets/"+chosenPhone.images[1]}}'>
+<img src='{{"../../assets/"+chosenPhone.images[2]}}'>
+<img src='{{"../../assets/"+chosenPhone.images[3]}}'>
+<img src='{{"../../assets/"+chosenPhone.images[4]}}'>
 <button (click)="goBack()">Go back</button>

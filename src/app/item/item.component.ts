@@ -30,8 +30,12 @@ chosenPhone: any = "";
         this.phoneId = params['id'];
       }
     );
+this.productService.getProduct(this.phoneId).subscribe(
+  data => {this.chosenPhone = data;}
+)
+
 //tilataan productservice
-    this.productService.getAllProducts()
+ /*   this.productService.getAllProducts()
     .subscribe(data => { this.productsList = data;
       console.log("productsList"+this.productsList);
 
@@ -44,7 +48,7 @@ chosenPhone: any = "";
       },
       error => {console.log("http-error:");
       console.log(error);});
-
+*/
 
 
 

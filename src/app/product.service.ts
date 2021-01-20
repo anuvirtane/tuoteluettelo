@@ -18,6 +18,11 @@ export class ProductService {
     return products;
   }
 
+  getProduct(id: string):any {
+    const product = this.http.get('assets/phones/'+id+'.json');
+    return product;
+  }
+
 
 
 
