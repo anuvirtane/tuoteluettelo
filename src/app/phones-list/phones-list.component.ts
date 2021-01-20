@@ -8,13 +8,14 @@ import { ProductService } from '../product.service';
 })
 export class PhonesListComponent implements OnInit {
 
-  title = 'tuoteluettelo';
+  title = 'Phones';
   filter= '';
 
-  sortBy = "name";
+
 
   productsList: any[];
-  testProduct: string = "TestProduct3874";
+  selectedSort: string = '';
+
 
   constructor(public productService: ProductService) { }
 
@@ -28,6 +29,23 @@ export class PhonesListComponent implements OnInit {
           console.log(data);},
           error => {console.log("http-error:");
           console.log(error);});
+  }
+
+  sortBy(event: any) {
+    this.selectedSort = event.target.value;
+    if (this.selectedSort =="name") {
+    this.productsList.sort(function(a, b) {
+      if (a.name>b.name)
+      return 1;
+      else if (a.name<b.name)
+      return -1;
+      return 0;
+  });}
+    else if (this.selectedSort=="age") {
+      this.productsList.sort(function(a, b) {
+        return parseInt(b.age) - parseInt(a.age);
+    });
+    }
   }
 
 

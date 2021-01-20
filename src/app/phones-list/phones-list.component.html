@@ -9,12 +9,18 @@
 
   <section class="sort">
     <label class="label">Sort by:</label>
-    <select class="select" [(ngModel)]="sortBy">
+    <select class="select" (change)="sortBy($event)">
       <option value="age">Newest</option>
       <option value="name">Alphabetical</option>
 
+
     </select>
+
+
+
+
   </section>
+
 </aside>
 
 <section class="phones-list-section">
