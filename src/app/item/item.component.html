@@ -9,13 +9,16 @@
 
     <section
       class="show-images"
-      *ngFor="let image of chosenPhone.images"
+
     >
+    <ul *ngFor="let image of chosenPhone.images"><li>
+      <figure class="phone-item-info--small-img">
+        <img src="{{ '../../assets/' + image}}" />
+      </figure>
+    </li></ul>
 
 
-    <figure class="phone-item-info--small-img">
-      <img src="{{ '../../assets/' + image}}" />
-    </figure>
+
 
 
     </section>
@@ -27,8 +30,8 @@
 
 <article class="info">
   <section class="availability">
-    <h2>Availability and Networks</h2>
-    <h3>Availability</h3>
+    <h2 class="info-h2">Availability and Networks</h2>
+    <h3 class="info-h3">Availability</h3>
     <p *ngIf="chosenPhone.availability==''">
       <fa-icon [icon]="faMinus"></fa-icon>
 
@@ -39,28 +42,28 @@
   </section>
 
   <section class="battery">
-    <h2>Battery</h2>
-    <h3>Type</h3>
+    <h2 class="info-h2">Battery</h2>
+    <h3 class="info-h3">Type</h3>
     <p>{{ chosenPhone.battery.type }}</p>
-    <h3>Talk time</h3>
+    <h3 class="info-h3">Talk time</h3>
     <p>{{ chosenPhone.battery.talkTime }}</p>
-    <h3>Standby time (max)</h3>
+    <h3 class="info-h3">Standby time (max)</h3>
     <p>{{ chosenPhone.battery.standbyTime }}</p>
   </section>
   <section class="storage-memory">
-    <h2>Storage and Memory</h2>
-    <h3>RAM</h3>
+    <h2 class="info-h2">Storage and Memory</h2>
+    <h3 class="info-h3">RAM</h3>
     <p>{{ chosenPhone.storage.ram }}</p>
-    <h3>Internal Storage</h3>
+    <h3 class="info-h3">Internal Storage</h3>
     <p>{{ chosenPhone.storage.flash }}</p>
   </section>
   <section class="connectivity">
-    <h2>Connectivity</h2>
-    <h3>Network Support</h3>
+    <h2 class="info-h2">Connectivity</h2>
+    <h3 class="info-h3">Network Support</h3>
     {{ chosenPhone.connectivity.cell }}
-    <h3>Bluetooth</h3>
+    <h3 class="info-h3">Bluetooth</h3>
     <p>{{ chosenPhone.connectivity.bluetooth }}</p>
-    <h3>Infrared</h3>
+    <h3 class="info-h3">Infrared</h3>
 
     <div *ngIf="chosenPhone.connectivity.infrared; else elseBlock">
       <fa-icon [icon]="faCheck"></fa-icon></div>
@@ -68,7 +71,7 @@
         <fa-icon [icon]="faMinus"></fa-icon>
         </ng-template
       >
-    <h3>GPS</h3>
+    <h3 class="info-h3">GPS</h3>
     <div *ngIf="chosenPhone.connectivity.gps; else elseBlock">
     <fa-icon [icon]="faCheck"></fa-icon></div>
       <ng-template #elseBlock>

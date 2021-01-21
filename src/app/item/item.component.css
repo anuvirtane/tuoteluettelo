@@ -33,12 +33,12 @@ body {
   height: 150px;
   width: 140px;
   border: solid 0.5px;
-  padding: 1rem;
+
   max-width: 100%;
-  /*flex-säännöt alla rikko kuvien koon
+
   flex-basis: 0px;
   flex-grow: 1;
-  order: 2;*/
+  order: 2;
 
 }
 
@@ -68,4 +68,13 @@ li {
   flex-basis: 0px;
   flex-grow: 1;
   order: 2;
+}
+
+.info-h2 {
+ font-size: 1.6rem;
+}
+
+.info-h3 {
+  font-size: 1.3rem;
+
 }
