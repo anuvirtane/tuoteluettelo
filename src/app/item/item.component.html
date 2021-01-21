@@ -1,6 +1,6 @@
 <main class= "phone-item-main">
   <article class="phone-item-big-image">
-    <figure><img src="{{ '../../assets/' + chosenPhone.images[1]}}" alt=""></figure>
+    <figure><img id="view-img" src="{{ '../../assets/' + chosenPhone.images[0]}}" alt="{{chosenPhone.name}}"></figure>
   </article>
   <article class="phone-item-info"><h1>{{ chosenPhone.name }}</h1>
     <hr>
@@ -13,7 +13,7 @@
     >
     <ul *ngFor="let image of chosenPhone.images"><li>
       <figure class="phone-item-info--small-img">
-        <img src="{{ '../../assets/' + image}}" />
+        <img  (click)="changeImg($event)" src="{{ '../../assets/' + image}}" />
       </figure>
     </li></ul>
 

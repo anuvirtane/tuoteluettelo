@@ -17,6 +17,7 @@ productsList: any[];
 chosenPhone: any = "";
 faCheck = faCheck;
 faMinus = faMinus;
+newImgSrc: string = '';
 
   constructor(  private route: ActivatedRoute,
     private productService: ProductService,
@@ -40,9 +41,6 @@ this.productService.getProduct(this.phoneId).subscribe(
 )
 
 
-
-
-
   }
 
 
@@ -51,5 +49,17 @@ this.productService.getProduct(this.phoneId).subscribe(
   goBack(): void {
     this.location.back();
   }
+
+  chooseImg() {
+   console.log("chooseImg works");
+  }
+
+  changeImg(event: any) {
+ this.newImgSrc = event.target.getAttribute('src');
+document.getElementById("view-img").setAttribute('src', this.newImgSrc);
+
+  }
+
+
 
 }
