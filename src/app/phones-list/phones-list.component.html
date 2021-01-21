@@ -42,12 +42,15 @@
 
 <ul class="phones-list" *ngFor='let phone of productsList |filter:term'>
   <li class="li-phone">
+    <figure class="phones-list-li-img">
   <img src= '{{"../../assets/"+ phone.imageUrl}}'
-  alt = '{{phone.name}}' height = "150" width = "140">
+  alt = '{{phone.name}}' height = "150" width = "140"></figure>
 
+  <main class="phones-list-li-text">
 
   <p><a routerLink='{{"/item/"+phone.id}}'>{{phone.name}}</a></p>
   <p>{{phone.snippet}}</p>
+</main>
 </li>
  </ul>
 </section>

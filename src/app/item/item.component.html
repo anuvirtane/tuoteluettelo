@@ -1,19 +1,40 @@
-<h1>{{ chosenPhone.name }}</h1>
-<p>{{ chosenPhone.description }}</p>
+<main class= "phone-item-main">
+  <article class="phone-item-big-image">
+    <figure><img src="{{ '../../assets/' + chosenPhone.images[1]}}" alt=""></figure>
+  </article>
+  <article class="phone-item-info"><h1>{{ chosenPhone.name }}</h1>
+    <hr>
+    <p>{{ chosenPhone.description }}</p>
 
-<section
-  class="show-images"
-  *ngFor="let image of chosenPhone.images"
->
-  <img src="{{ '../../assets/' + image}}" />
-</section>
+
+    <section
+      class="show-images"
+      *ngFor="let image of chosenPhone.images"
+    >
+
+
+    <figure class="phone-item-info--small-img">
+      <img src="{{ '../../assets/' + image}}" />
+    </figure>
+
+
+    </section>
+
+
+  </article>
+
+</main>
 
 <article class="info">
   <section class="availability">
     <h2>Availability and Networks</h2>
     <h3>Availability</h3>
+    <p *ngIf="chosenPhone.availability==''">
+      <fa-icon [icon]="faMinus"></fa-icon>
+
+    </p>
     <ul *ngFor="let option of chosenPhone.availability">
-      <li>>{{ option }}</li>
+      <li>{{ option }}</li>
     </ul>
   </section>
 
@@ -58,4 +79,4 @@
   </section>
 </article>
 
-<button (click)="goBack()">Go back</button>
+<button class="btn btn-primary" (click)="goBack()">Go back</button>
