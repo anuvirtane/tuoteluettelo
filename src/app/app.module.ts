@@ -10,7 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { ItemComponent } from './item/item.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
-
+import {CommonModule} from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -19,6 +19,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     ItemComponent
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     FontAwesomeModule,
   HttpClientModule,

@@ -3,16 +3,16 @@
 
 <section
   class="show-images"
-  *ngFor="let image of chosenPhone.images; let i = index"
+  *ngFor="let image of chosenPhone.images"
 >
-  <img src="{{ '../../assets/' + chosenPhone.images[i - 1] }}" />
+  <img src="{{ '../../assets/' + image}}" />
 </section>
 
 <article class="info">
   <section class="availability">
     <h2>Availability and Networks</h2>
     <h3>Availability</h3>
-    <ul *ngFor="let option of chosenPhone.availability; let in = index">
+    <ul *ngFor="let option of chosenPhone.availability">
       <li>>{{ option }}</li>
     </ul>
   </section>
@@ -40,12 +40,21 @@
     <h3>Bluetooth</h3>
     <p>{{ chosenPhone.connectivity.bluetooth }}</p>
     <h3>Infrared</h3>
-    <div *ngIf="chosenPhone.connectivity.infrared === true; else elseBlock"><p>
-      <fa-icon [icon]="faCheck"></fa-icon></p>
-      <ng-template #elseBlock
-        > <fa-icon [icon]="faMinus"></fa-icon></ng-template
+
+    <div *ngIf="chosenPhone.connectivity.infrared; else elseBlock">
+      <fa-icon [icon]="faCheck"></fa-icon></div>
+      <ng-template #elseBlock>
+        <fa-icon [icon]="faMinus"></fa-icon>
+        </ng-template
       >
-    </div>
+    <h3>GPS</h3>
+    <div *ngIf="chosenPhone.connectivity.gps; else elseBlock">
+    <fa-icon [icon]="faCheck"></fa-icon></div>
+      <ng-template #elseBlock>
+        <fa-icon [icon]="faMinus"></fa-icon>
+        </ng-template
+      >
+
   </section>
 </article>
 

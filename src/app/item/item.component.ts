@@ -5,6 +5,7 @@ import {ProductService} from '../product.service';
 import {faCheck} from '@fortawesome/free-solid-svg-icons';
 import {faMinus} from '@fortawesome/free-solid-svg-icons';
 
+
 @Component({
   selector: 'app-item',
   templateUrl: './item.component.html',
