@@ -19,12 +19,15 @@ faCheck = faCheck;
 faMinus = faMinus;
 newImgSrc: string = '';
 
+
   constructor(  private route: ActivatedRoute,
     private productService: ProductService,
     private location: Location) { }
 
   ngOnInit(): void {
     this.getPhone();
+
+
   }
 
   getPhone(): void {
@@ -38,7 +41,7 @@ newImgSrc: string = '';
     );
 this.productService.getProduct(this.phoneId).subscribe(
   data => {this.chosenPhone = data;}
-)
+);
 
 
   }
@@ -50,9 +53,7 @@ this.productService.getProduct(this.phoneId).subscribe(
     this.location.back();
   }
 
-  chooseImg() {
-   console.log("chooseImg works");
-  }
+
 
   changeImg(event: any) {
  this.newImgSrc = event.target.getAttribute('src');
