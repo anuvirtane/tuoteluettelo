@@ -9,9 +9,9 @@ import { ProductService } from '../product.service';
 export class PhonesListComponent implements OnInit {
 
   title = 'Phones';
-filter: string = '';
-soughtPhone: string = '';
 
+soughtPhone: string = '';
+term: string = '';
 
 
   productsList: any[];
@@ -49,7 +49,7 @@ soughtPhone: string = '';
     }
   }
 
-  onSearch(event: any) {
+/*  onSearch(event: any) {
 
     this.filter = (<HTMLInputElement>event.target).value;
     this.productsList.forEach(element => {
@@ -65,7 +65,7 @@ soughtPhone: string = '';
     });
 
 
-      }
+      }*/
 
  }
 

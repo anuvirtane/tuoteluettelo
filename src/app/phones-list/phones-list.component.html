@@ -16,11 +16,7 @@
 -->
 <section >
   <input type="text" [(ngModel)]="term">
-  <div *ngFor = "let item of items |filter:term" >
-    <p>
-      {{item.name}}
-    </p>
-  </div>
+
 
 </section>
   </section>
@@ -44,7 +40,7 @@
 
 <section class="phones-list-section">
 
-<ul class="phones-list" *ngFor='let phone of productsList'>
+<ul class="phones-list" *ngFor='let phone of productsList |filter:term'>
   <li class="li-phone">
   <img src= '{{"../../assets/"+ phone.imageUrl}}'
   alt = '{{phone.name}}' height = "150" width = "140">
