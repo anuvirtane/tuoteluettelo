@@ -9,6 +9,7 @@ import { PhonesListComponent } from './phones-list/phones-list.component';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { ItemComponent } from './item/item.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ItemComponent } from './item/item.component';
     FontAwesomeModule,
   HttpClientModule,
 FormsModule,
-AppRoutingModule  ],
+AppRoutingModule,
+Ng2SearchPipeModule  ],
   providers: [],
   bootstrap: [AppComponent]
 })

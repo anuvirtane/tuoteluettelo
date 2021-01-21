@@ -5,6 +5,7 @@
 
   <section class="search">
     <label class="label">Search:</label>
+    <!---
     <input class="input" (input)="onSearch($event)" type="text" />
 
 <div class="m-3"
@@ -12,6 +13,16 @@
  <p class="card bg-light m-1 p-3"> {{soughtPhone}}</p>
 </div>
 <ng-template #elseBlock>No search results</ng-template>
+-->
+<section >
+  <input type="text" [(ngModel)]="term">
+  <div *ngFor = "let item of items |filter:term" >
+    <p>
+      {{item.name}}
+    </p>
+  </div>
+
+</section>
   </section>
 
 
@@ -39,7 +50,7 @@
   alt = '{{phone.name}}' height = "150" width = "140">
 
 
-  <p><a href="">{{phone.name}}</a></p>
+  <p><a routerLink='{{"/item/"+phone.id}}'>{{phone.name}}</a></p>
   <p>{{phone.snippet}}</p>
 </li>
  </ul>

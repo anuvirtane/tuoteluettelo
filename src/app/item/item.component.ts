@@ -34,21 +34,7 @@ this.productService.getProduct(this.phoneId).subscribe(
   data => {this.chosenPhone = data;}
 )
 
-//tilataan productservice
- /*   this.productService.getAllProducts()
-    .subscribe(data => { this.productsList = data;
-      console.log("productsList"+this.productsList);
 
-      this.productsList.forEach(phone => {if (phone.id === this.phoneId) {
-        this.chosenPhone = phone;
-                }}
-        );
-
-
-      },
-      error => {console.log("http-error:");
-      console.log(error);});
-*/
 
 
 
