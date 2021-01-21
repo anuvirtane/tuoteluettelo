@@ -11,6 +11,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { ItemComponent } from './item/item.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
+
 @NgModule({
   declarations: [
     AppComponent,

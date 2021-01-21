@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import {ProductService} from '../product.service';
+import {faCheck} from '@fortawesome/free-solid-svg-icons';
+import {faMinus} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-item',
@@ -12,6 +14,8 @@ export class ItemComponent implements OnInit {
 phoneId: string = '';
 productsList: any[];
 chosenPhone: any = "";
+faCheck = faCheck;
+faMinus = faMinus;
 
   constructor(  private route: ActivatedRoute,
     private productService: ProductService,

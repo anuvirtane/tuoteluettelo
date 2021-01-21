@@ -1,9 +1,52 @@
+<h1>{{ chosenPhone.name }}</h1>
+<p>{{ chosenPhone.description }}</p>
 
-<p>{{chosenPhone.additionalFeatures}}</p>
-{{chosenPhone.battery}}
-<img src='{{"../../assets/"+chosenPhone.images[0]}}'>
-<img src='{{"../../assets/"+chosenPhone.images[1]}}'>
-<img src='{{"../../assets/"+chosenPhone.images[2]}}'>
-<img src='{{"../../assets/"+chosenPhone.images[3]}}'>
-<img src='{{"../../assets/"+chosenPhone.images[4]}}'>
+<section
+  class="show-images"
+  *ngFor="let image of chosenPhone.images; let i = index"
+>
+  <img src="{{ '../../assets/' + chosenPhone.images[i - 1] }}" />
+</section>
+
+<article class="info">
+  <section class="availability">
+    <h2>Availability and Networks</h2>
+    <h3>Availability</h3>
+    <ul *ngFor="let option of chosenPhone.availability; let in = index">
+      <li>>{{ option }}</li>
+    </ul>
+  </section>
+
+  <section class="battery">
+    <h2>Battery</h2>
+    <h3>Type</h3>
+    <p>{{ chosenPhone.battery.type }}</p>
+    <h3>Talk time</h3>
+    <p>{{ chosenPhone.battery.talkTime }}</p>
+    <h3>Standby time (max)</h3>
+    <p>{{ chosenPhone.battery.standbyTime }}</p>
+  </section>
+  <section class="storage-memory">
+    <h2>Storage and Memory</h2>
+    <h3>RAM</h3>
+    <p>{{ chosenPhone.storage.ram }}</p>
+    <h3>Internal Storage</h3>
+    <p>{{ chosenPhone.storage.flash }}</p>
+  </section>
+  <section class="connectivity">
+    <h2>Connectivity</h2>
+    <h3>Network Support</h3>
+    {{ chosenPhone.connectivity.cell }}
+    <h3>Bluetooth</h3>
+    <p>{{ chosenPhone.connectivity.bluetooth }}</p>
+    <h3>Infrared</h3>
+    <div *ngIf="chosenPhone.connectivity.infrared === true; else elseBlock"><p>
+      <fa-icon [icon]="faCheck"></fa-icon></p>
+      <ng-template #elseBlock
+        > <fa-icon [icon]="faMinus"></fa-icon></ng-template
+      >
+    </div>
+  </section>
+</article>
+
 <button (click)="goBack()">Go back</button>

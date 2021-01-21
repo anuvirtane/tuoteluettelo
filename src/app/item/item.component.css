@@ -1,0 +1,15 @@
+li {
+  list-style: none;
+}
+
+.info {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.info > * {
+  flex-basis: 0px;
+  flex-grow: 1;
+  order: 2;
+}
