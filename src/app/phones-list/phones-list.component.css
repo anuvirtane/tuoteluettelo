@@ -12,7 +12,12 @@
 
 .search--sort {
   flex-grow: 1;
+  margin-left: 1rem;
 
+}
+
+.search {
+  margin-bottom: 0.5rem;
 }
 
 .phones-list-section {
@@ -37,6 +42,13 @@
 
 .phones-list-li-img {
   float: left;
+}
+
+
+
+img:hover {
+  width: 300px;
+  height: 280px;
 }
 
 .phones-list-li-text {

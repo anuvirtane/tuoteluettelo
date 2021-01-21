@@ -1,19 +1,12 @@
-<h1>{{title}}</h1>
+
 
 <article class ="flex-parent">
 <aside class="search--sort">
+  <h1>{{title}}</h1>
 
   <section class="search">
     <label class="label">Search:</label>
-    <!---
-    <input class="input" (input)="onSearch($event)" type="text" />
 
-<div class="m-3"
-*ngIf="soughtPhone==filter; else elseBlock">
- <p class="card bg-light m-1 p-3"> {{soughtPhone}}</p>
-</div>
-<ng-template #elseBlock>No search results</ng-template>
--->
 <section >
   <input type="text" [(ngModel)]="term">
 
@@ -44,7 +37,7 @@
   <li class="li-phone">
     <figure class="phones-list-li-img">
   <img src= '{{"../../assets/"+ phone.imageUrl}}'
-  alt = '{{phone.name}}' height = "150" width = "140"></figure>
+  alt = '{{phone.name}}' height = "150" width = "140" routerLink='{{"/item/"+phone.id}}'></figure>
 
   <main class="phones-list-li-text">
 
