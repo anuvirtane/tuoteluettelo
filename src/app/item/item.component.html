@@ -3,7 +3,7 @@
     <figure>
       <img
         id="view-img"
-        src="{{ '../../assets/img/phones/' + phoneId + '.0.jpg' }}"
+        src="{{ '/assets/img/phones/' + phoneId + '.0.jpg' }}"
         alt="{{ chosenPhone.name }}"
       />
     </figure>
@@ -19,7 +19,7 @@
           <figure class="phone-item-info--small-img">
             <img
               (click)="changeImg($event)"
-              src="{{ '../../assets/' + image }}"
+              src="{{ '/assets/' + image }}"
             />
           </figure>
         </li>
