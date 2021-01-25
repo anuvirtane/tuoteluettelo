@@ -1,40 +1,39 @@
-<main class= "phone-item-main">
-  <article class="phone-item-big-image" >
-    <figure><img id="view-img"  src="{{ '../../assets/img/phones/' + phoneId + '.0.jpg'}}" alt="{{chosenPhone.name}}"></figure>
+<main class="phone-item-main" *ngIf="allReady">
+  <article class="phone-item-big-image">
+    <figure>
+      <img
+        id="view-img"
+        src="{{ '../../assets/img/phones/' + phoneId + '.0.jpg' }}"
+        alt="{{ chosenPhone.name }}"
+      />
+    </figure>
   </article>
-  <article class="phone-item-info"><h1>{{ chosenPhone.name }}</h1>
-    <hr>
+  <article class="phone-item-info">
+    <h1>{{ chosenPhone.name }}</h1>
+    <hr />
     <p>{{ chosenPhone.description }}</p>
 
-
-    <section
-      class="show-images"
-
-    >
-    <ul *ngFor="let image of chosenPhone.images"><li>
-      <figure class="phone-item-info--small-img">
-        <img  (click)="changeImg($event)" src="{{ '../../assets/' + image}}" />
-      </figure>
-    </li></ul>
-
-
-
-
-
+    <section class="show-images">
+      <ul *ngFor="let image of chosenPhone.images">
+        <li>
+          <figure class="phone-item-info--small-img">
+            <img
+              (click)="changeImg($event)"
+              src="{{ '../../assets/' + image }}"
+            />
+          </figure>
+        </li>
+      </ul>
     </section>
-
-
   </article>
-
 </main>
 
-<article class="info">
+<article class="info" *ngIf="allReady">
   <section class="availability">
     <h2 class="info-h2">Availability and Networks</h2>
     <h3 class="info-h3">Availability</h3>
-    <p *ngIf="chosenPhone.availability==''">
+    <p *ngIf="chosenPhone.availability == ''">
       <fa-icon [icon]="faMinus"></fa-icon>
-
     </p>
     <ul *ngFor="let option of chosenPhone.availability">
       <li>{{ option }}</li>
@@ -66,19 +65,18 @@
     <h3 class="info-h3">Infrared</h3>
 
     <div *ngIf="chosenPhone.connectivity.infrared; else elseBlock">
-      <fa-icon [icon]="faCheck"></fa-icon></div>
-      <ng-template #elseBlock>
-        <fa-icon [icon]="faMinus"></fa-icon>
-        </ng-template
-      >
+      <fa-icon [icon]="faCheck"></fa-icon>
+    </div>
+    <ng-template #elseBlock>
+      <fa-icon [icon]="faMinus"></fa-icon>
+    </ng-template>
     <h3 class="info-h3">GPS</h3>
     <div *ngIf="chosenPhone.connectivity.gps; else elseBlock">
-    <fa-icon [icon]="faCheck"></fa-icon></div>
-      <ng-template #elseBlock>
-        <fa-icon [icon]="faMinus"></fa-icon>
-        </ng-template
-      >
-
+      <fa-icon [icon]="faCheck"></fa-icon>
+    </div>
+    <ng-template #elseBlock>
+      <fa-icon [icon]="faMinus"></fa-icon>
+    </ng-template>
   </section>
 </article>
 

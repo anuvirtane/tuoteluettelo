@@ -1,50 +1,44 @@
+<article class="flex-parent">
+  <aside class="search--sort">
+    <h1>{{ title }}</h1>
 
+    <section class="search">
+      <label class="label">Search:</label>
 
-<article class ="flex-parent">
-<aside class="search--sort">
-  <h1>{{title}}</h1>
+      <section>
+        <input type="text" [(ngModel)]="term" />
+      </section>
+    </section>
 
-  <section class="search">
-    <label class="label">Search:</label>
+    <section class="sort">
+      <label class="label">Sort by:</label>
+      <select class="select" (change)="sortBy($event)">
+        <option value="age">Newest</option>
+        <option value="name">Alphabetical</option>
+      </select>
+    </section>
+  </aside>
 
-<section >
-  <input type="text" [(ngModel)]="term">
+  <section class="phones-list-section">
+    <ul class="phones-list" *ngFor="let phone of productsList | filter: term">
+      <li class="li-phone">
+        <figure class="phones-list-li-img">
+          <img
+            src="{{ '../../assets/' + phone.imageUrl }}"
+            alt="{{ phone.name }}"
+            height="150"
+            width="140"
+            routerLink="{{ '/item/' + phone.id }}"
+          />
+        </figure>
 
-
-</section>
+        <main class="phones-list-li-text">
+          <p>
+            <a routerLink="{{ '/item/' + phone.id }}">{{ phone.name }}</a>
+          </p>
+          <p>{{ phone.snippet }}</p>
+        </main>
+      </li>
+    </ul>
   </section>
-
-
-  <section class="sort">
-    <label class="label">Sort by:</label>
-    <select class="select" (change)="sortBy($event)">
-      <option value="age">Newest</option>
-      <option value="name">Alphabetical</option>
-
-
-    </select>
-
-
-
-
-  </section>
-
-</aside>
-
-<section class="phones-list-section">
-
-<ul class="phones-list" *ngFor='let phone of productsList |filter:term'>
-  <li class="li-phone">
-    <figure class="phones-list-li-img">
-  <img src= '{{"../../assets/"+ phone.imageUrl}}'
-  alt = '{{phone.name}}' height = "150" width = "140" routerLink='{{"/item/"+phone.id}}'></figure>
-
-  <main class="phones-list-li-text">
-
-  <p><a routerLink='{{"/item/"+phone.id}}'>{{phone.name}}</a></p>
-  <p>{{phone.snippet}}</p>
-</main>
-</li>
- </ul>
-</section>
 </article>
